@@ -1,0 +1,612 @@
+/* =========================================================
+   HealthWealth Frontend
+   Global Styles
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #176b87;
+    --primary-dark: #0f4f65;
+    --secondary: #36a269;
+    --background: #f4f8fa;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #dce5e9;
+    --danger: #dc3545;
+    --warning: #d97706;
+    --success: #198754;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================================================
+   Header / Navigation
+   ========================================================= */
+
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 70px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* =========================================================
+   Main Container
+   ========================================================= */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 40px 0;
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #e8f5f8,
+        #eef9f2
+    );
+
+    padding: 60px 30px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: var(--primary-dark);
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-secondary {
+    background: #e9eef1;
+    color: var(--text);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================================
+   Cards
+   ========================================================= */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.card h2,
+.card h3 {
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+}
+
+.card p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   Dashboard Grid
+   ========================================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.dashboard-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.dashboard-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================================================
+   Section
+   ========================================================= */
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    color: var(--primary-dark);
+    font-size: 28px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   Forms
+   ========================================================= */
+
+.form-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: white;
+    color: var(--text);
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-control:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 107, 135, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/* =========================================================
+   Search / Filter
+   ========================================================= */
+
+.filter-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-box .form-control,
+.filter-box select {
+    max-width: 250px;
+}
+
+/* =========================================================
+   Patient / Hospital / Recommendation Cards
+   ========================================================= */
+
+.patient-card,
+.hospital-card,
+.recommendation-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.patient-card h3,
+.hospital-card h3,
+.recommendation-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.patient-info,
+.hospital-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+    margin-top: 12px;
+}
+
+.info-item {
+    font-size: 14px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.info-value {
+    color: var(--muted);
+}
+
+/* =========================================================
+   Recommendation
+   ========================================================= */
+
+.recommendation-card {
+    border-left: 5px solid var(--secondary);
+}
+
+.recommendation-score {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.recommendation-reason {
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+.recommendation-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    background: #e7f6ed;
+    color: var(--success);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #edf4f6;
+}
+
+th,
+td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+th {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+td {
+    color: var(--muted);
+}
+
+tbody tr:hover {
+    background: #f8fbfc;
+}
+
+/* =========================================================
+   Status Messages
+   ========================================================= */
+
+.message {
+    padding: 13px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.message-success {
+    background: #e9f7ef;
+    color: #146c43;
+    border: 1px solid #badbcc;
+}
+
+.message-error {
+    background: #fcebec;
+    color: #b02a37;
+    border: 1px solid #f5c2c7;
+}
+
+.message-warning {
+    background: #fff4e5;
+    color: #997404;
+    border: 1px solid #ffecb5;
+}
+
+.message-info {
+    background: #e7f5fa;
+    color: #087990;
+    border: 1px solid #b6effb;
+}
+
+/* =========================================================
+   Loading
+   ========================================================= */
+
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+}
+
+.spinner {
+    width: 35px;
+    height: 35px;
+
+    border: 4px solid #dce5e9;
+    border-top: 4px solid var(--primary);
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+
+    margin: 0 auto 12px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+}
+
+.empty-state h3 {
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+footer {
+    margin-top: 50px;
+    background: #123f4e;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    width: 92%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-info,
+    .hospital-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}

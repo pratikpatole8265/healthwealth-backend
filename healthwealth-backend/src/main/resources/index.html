@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealthWealth - Healthcare Navigation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <span class="logo-icon">+</span>
+            <span>HealthWealth</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#patient">Patient</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="badge">
+                    Healthcare Navigation System
+                </span>
+
+                <h1>
+                    Find the right
+                    <span>healthcare option</span>
+                    for you.
+                </h1>
+
+                <p>
+                    HealthWealth helps patients discover suitable hospitals,
+                    government schemes, insurance coverage and estimated
+                    healthcare costs based on their profile.
+                </p>
+
+                <button class="primary-btn"
+                        onclick="scrollToPatient()">
+                    Get Recommendations
+                </button>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">♥</div>
+
+                <h3>Smart Healthcare Guidance</h3>
+
+                <p>
+                    Compare healthcare options using transparent,
+                    explainable recommendations.
+                </p>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>Hospitals</strong>
+                        <span>Compare</span>
+                    </div>
+
+                    <div>
+                        <strong>Insurance</strong>
+                        <span>Check</span>
+                    </div>
+
+                    <div>
+                        <strong>Schemes</strong>
+                        <span>Eligibility</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PATIENT SECTION ================= -->
+
+    <section id="patient" class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Patient Information
+                </span>
+
+                <h2>
+                    Enter Patient ID
+                </h2>
+
+                <p>
+                    Enter an existing patient ID to generate
+                    healthcare recommendations.
+                </p>
+
+            </div>
+
+
+            <div class="patient-card">
+
+                <div class="form-group">
+
+                    <label for="patientId">
+                        Patient ID
+                    </label>
+
+                    <input
+                            type="number"
+                            id="patientId"
+                            placeholder="Example: 1"
+                            min="1"
+                    >
+
+                    <small>
+                        Use a patient ID available in the HealthWealth database.
+                    </small>
+
+                </div>
+
+
+                <button
+                        class="primary-btn"
+                        id="recommendBtn"
+                        onclick="getRecommendations()">
+
+                    Get Recommendations
+
+                </button>
+
+
+                <div id="loading" class="loading hidden">
+                    Loading recommendations...
+                </div>
+
+
+                <div id="errorMessage" class="error-message hidden">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PATIENT DETAILS ================= -->
+
+    <section id="patientDetails" class="section light-section hidden">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Patient Profile
+                </span>
+
+                <h2>
+                    Patient Details
+                </h2>
+
+            </div>
+
+
+            <div class="patient-details-card">
+
+                <div class="detail-item">
+                    <span>Patient ID</span>
+                    <strong id="displayPatientId">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Patient Name</span>
+                    <strong id="displayPatientName">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Disease</span>
+                    <strong id="displayDiseaseName">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Disease ID</span>
+                    <strong id="displayDiseaseId">-</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RECOMMENDATIONS ================= -->
+
+    <section id="recommendations" class="section hidden">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    HealthWealth Analysis
+                </span>
+
+                <h2>
+                    Recommended Healthcare Options
+                </h2>
+
+                <p>
+                    These recommendations are generated using the
+                    patient's profile, disease, hospital availability,
+                    insurance and government-scheme information.
+                </p>
+
+            </div>
+
+
+            <div id="recommendationContainer"
+                 class="recommendation-container">
+
+                <!-- JavaScript will insert recommendation cards here -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INFORMATION ================= -->
+
+    <section class="section light-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    How It Works
+                </span>
+
+                <h2>
+                    Healthcare decisions made simpler
+                </h2>
+
+            </div>
+
+
+            <div class="features">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Patient Profile
+                    </h3>
+
+                    <p>
+                        HealthWealth reads the patient's basic profile
+                        and disease information.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Eligibility Check
+                    </h3>
+
+                    <p>
+                        Available insurance policies and government
+                        schemes are evaluated.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Recommendation
+                    </h3>
+
+                    <p>
+                        Hospitals and healthcare options are scored
+                        using transparent rules.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="logo">
+                    <span class="logo-icon">+</span>
+                    <span>HealthWealth</span>
+                </div>
+
+                <p>
+                    Healthcare navigation prototype.
+                </p>
+
+            </div>
+
+
+            <div class="footer-note">
+
+                <p>
+                    This application is a prototype and does not
+                    provide medical diagnosis or clinical advice.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 HealthWealth
+            </span>
+
+            <span>
+                Local Prototype
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

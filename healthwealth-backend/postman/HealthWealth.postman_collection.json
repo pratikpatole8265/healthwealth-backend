@@ -1,0 +1,11 @@
+{
+  "info":{"name":"HealthWealth Local API","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "item":[
+    {"name":"Patients","request":{"method":"GET","url":"http://localhost:8080/api/patients?page=0&size=10"}},
+    {"name":"Patient 1 Diseases","request":{"method":"GET","url":"http://localhost:8080/api/patients/1/diseases"}},
+    {"name":"Pune Diabetes Hospitals","request":{"method":"GET","url":"http://localhost:8080/api/hospitals?city=Pune&diseaseId=1"}},
+    {"name":"Eligible Schemes","request":{"method":"GET","url":"http://localhost:8080/api/schemes/eligible/3?diseaseId=3"}},
+    {"name":"Eligible Insurance","request":{"method":"GET","url":"http://localhost:8080/api/insurance/eligible/3?diseaseId=3"}},
+    {"name":"Recommendation Patient 1","request":{"method":"GET","url":"http://localhost:8080/api/recommendations/1"}}
+  ]
+}
