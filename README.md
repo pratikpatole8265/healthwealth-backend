@@ -513,18 +513,5 @@ Production deployment should additionally consider authentication, authorization
 - [x] Disease-specific recommendation validation
 - [x] Layered package architecture
 
-## Recommended Next Improvements
-
-- [ ] Add JUnit tests
-- [ ] Add MockMvc controller tests
-- [ ] Add integration tests
-- [ ] Add Swagger/OpenAPI documentation
-- [ ] Add authentication/authorization
-- [ ] Improve configurable recommendation weights
-- [ ] Add production logging configuration
-- [ ] Add Docker support
-- [ ] Add CI/CD pipeline
-
-## License
 
 This project is intended as a learning/demo backend application.
